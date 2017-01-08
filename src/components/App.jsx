@@ -1,32 +1,44 @@
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+var App = () => (
+ <div>
+    <Nav />
+    <div className="col-md-7">
+      <VideoPlayer video = {window.exampleVideoData[0]}/>
+    </div>
+    <div className="col-md-5">
+      <VideoList videos = {window.exampleVideoData}/>
+    </div>
+  </div>
+);
 
-    this.state = {
-      play: false
-    }
-  }
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-  onVideoItemClick() {
-    this.setState({
-      play: !this.state.play
-    });
-  }
+//     this.state = {
+//       play: false
+//     }
+//   }
 
-  render() {
-    return (
-      <div>
-        <Nav />
-        <div className="col-md-7">
-          <VideoPlayer video = {}/>
-        </div>
-        <div className="col-md-5">
-          <VideoList videos = {this.props.videos}/>
-        </div>
-      </div>
-    );
-  }
-}
+//   onVideoItemClick() {
+//     this.setState({
+//       play: !this.state.play
+//     });
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <Nav />
+//         <div className="col-md-7">
+//           <VideoPlayer video = {this.props.videos[0]}/>
+//         </div>
+//         <div className="col-md-5">
+//           <VideoList videos = {this.props.videos}/>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
