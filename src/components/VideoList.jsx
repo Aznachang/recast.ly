@@ -1,7 +1,12 @@
 //Here we are passing in EACH '{video}'
 var VideoList = (props) => (
   <div className="video-list media">
-    {props.videos.map(video => <VideoListEntry video = {video} key = {video.id.videoId} />)}
+    {props.videos.map(video =>
+      <VideoListEntry
+        video = {video}
+        key = {video.id.videoId}
+        handleVideoTitleClick = {video.handleVideoTitleClick}
+      />)}
   </div>
 );
 
