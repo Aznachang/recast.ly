@@ -5,7 +5,7 @@ var VideoList = (props) => (
       <VideoListEntry
         video = {video}
         key = {video.id.videoId}
-        handleVideoTitleClick = {video.handleVideoTitleClick}
+        handleVideoTitleClick = {props.handleVideoTitleClick}
       />)}
   </div>
 );

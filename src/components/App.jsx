@@ -12,7 +12,7 @@
 
 //use 'this' for React class STATE components
 //remember 'stateless' uses 'props' (can be w/e) instead of 'this'
-
+// 'Rendering' 'App' component to the DOM
 class App extends React.Component {
   constructor(props) {
     //allows access for 'App' to React.Component methods
@@ -24,8 +24,8 @@ class App extends React.Component {
     //need to change the '{state}' to do this!
     this.state = {
 
-      videos: window.exampleVideoData, //all vids [{exampleVideoData}]
-      currVideo: window.exampleVideoData[0], //1st vid in [{exampleVideoData}]
+      videos: exampleVideoData, //all vids [{exampleVideoData}]
+      currVideo: exampleVideoData[1], //1st vid in [{exampleVideoData}]
     }
   }
 
@@ -45,7 +45,7 @@ class App extends React.Component {
           <VideoPlayer video = {this.state.currVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos = {this.state.videos} handleVideoTitleClick = {this.handleVideoTitleClick}/>
+          <VideoList videos = {this.state.videos} handleVideoTitleClick = {this.handleVideoTitleClick.bind(this)}/>
         </div>
       </div>
     );
